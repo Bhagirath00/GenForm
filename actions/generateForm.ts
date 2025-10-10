@@ -62,15 +62,33 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
     {
       "label": "string", // The label to display for the field
       "name": "string",  // The unique identifier for the field (used for form submissions)
-      "placeholder": "string" // The placeholder text for the field
+      "placeholder": "string", // The placeholder text for the field
+      "type": "string", // Field type: "text", "email", "number", "textarea", "select", "radio", "checkbox", "date", "time", "datetime-local"
+      "options": ["option1", "option2"] // Only for select, radio, checkbox types (optional for others)
     }
   ]
 }
+
+Available field types and when to use them:
+- "text": For general text input (names, titles, etc.)
+- "email": For email addresses
+- "number": For numeric input (age, quantity, etc.) 
+- "textarea": For long text (comments, descriptions, etc.)
+- "select": For dropdown menus (country, category selection, etc.)
+- "radio": For single choice from multiple options (gender, priority level, etc.)
+- "checkbox": For multiple choice selections (interests, preferences, etc.)
+- "date": For date selection (birth date, event date, etc.)
+- "time": For time selection (appointment time, etc.)
+- "datetime-local": For date and time together (event datetime, etc.)
+
 Requirements:
-- Use only the given keys: "formTitle", "formFields", "label", "name", "placeholder".
-- Always include at least 3 fields in the "formFields" array.
-- Keep the field names consistent across every generation for reliable rendering.
-- Provide meaningful placeholder text for each field based on its label.`;
+- Use only the given keys: "formTitle", "formFields", "label", "name", "placeholder", "type", "options".
+- Always include at least 3-5 fields in the "formFields" array.
+- Choose appropriate field types based on the form's purpose.
+- For select, radio, and checkbox fields, always include an "options" array with 2-4 meaningful options.
+- For other field types, you can omit the "options" field or set it to an empty array.
+- Provide meaningful placeholder text for each field based on its label and type.
+- Make field names lowercase and use underscores (e.g., "first_name", "email_address").`;
 
     const result = await chatSession.sendMessage(`${description} ${prompt}`);
     const formContent = result.response.text(); // Parse response content

@@ -2,6 +2,8 @@ export type Fields = {
     name?:string;
     label?:string;
     placeholder?:string;
+    type?:string;
+    options?:string[];
 }
 export type Content = { 
     formTitle:string;
