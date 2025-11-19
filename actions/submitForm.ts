@@ -23,7 +23,7 @@ export const submitForm = async (formUuid: string, formData: any) => {
         await prisma.submissions.create({
             data: {
                 formId: form.id,
-                content: formData
+                content: JSON.stringify(formData)
             }
         });
 
