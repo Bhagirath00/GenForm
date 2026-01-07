@@ -11,16 +11,27 @@ export async function getAllTemplates(): Promise<Template[]> {
   try {
     const templates: Template[] = [];
     
+    // Check if templates directory exists
+    if (!fs.existsSync(TEMPLATES_DIR)) {
+      console.error(`Templates directory not found at: ${TEMPLATES_DIR}`);
+      console.error(`Current working directory: ${process.cwd()}`);
+      return [];
+    }
+    
     // Read all category folders
     const categories = fs.readdirSync(TEMPLATES_DIR, { withFileTypes: true })
       .filter(dirent => dirent.isDirectory())
       .map(dirent => dirent.name);
+
+    console.log(`Found ${categories.length} template categories:`, categories);
 
     // Read templates from each category
     for (const category of categories) {
       const categoryPath = path.join(TEMPLATES_DIR, category);
       const files = fs.readdirSync(categoryPath)
         .filter(file => file.endsWith('.json'));
+
+      console.log(`Category ${category}: Found ${files.length} templates`);
 
       for (const file of files) {
         const filePath = path.join(categoryPath, file);
@@ -30,9 +41,12 @@ export async function getAllTemplates(): Promise<Template[]> {
       }
     }
 
+    console.log(`Total templates loaded: ${templates.length}`);
     return templates;
   } catch (error) {
     console.error("Error reading templates:", error);
+    console.error("Templates directory path:", TEMPLATES_DIR);
+    console.error("Current working directory:", process.cwd());
     return [];
   }
 }
