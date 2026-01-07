@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sparkles, FileEdit, Loader2, Plus } from "lucide-react";
 import GenerateFormInput from "./GenerateFormInput";
+import TemplateDialog from "./TemplateDialog";
 import { createBlankForm } from "@/actions/createBlankForm";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
@@ -26,8 +27,9 @@ const CreateFormDialog: React.FC<Props> = ({
   isSubscribed,
 }) => {
   const [open, setOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<"ai" | "manual" | null>(null);
+  const [selectedOption, setSelectedOption] = useState<"ai" | "manual" | "template" | null>(null);
   const [isCreating, setIsCreating] = useState(false);
+  const [templateDialogOpen, setTemplateDialogOpen] = useState(false);
   const router = useRouter();
 
   const handleManualCreate = async () => {
@@ -117,32 +119,33 @@ const CreateFormDialog: React.FC<Props> = ({
               </div>
             </button>
 
-            {/* Future Template Option - Disabled */}
-            <div className="relative opacity-50">
-              <button
-                disabled
-                className="w-full relative overflow-hidden rounded-xl border-2 border-gray-200 dark:border-gray-700 p-6 text-left cursor-not-allowed"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 p-3 shadow-lg">
-                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-lg mb-2">
-                      Use Template
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Choose from pre-built templates and customize them to your needs.
-                    </p>
-                    <div className="mt-3 inline-flex items-center text-xs font-semibold text-purple-600 dark:text-purple-400">
-                      Coming Soon
-                    </div>
+            {/* Template Option */}
+            <button
+              onClick={() => {
+                setTemplateDialogOpen(true);
+                setOpen(false);
+              }}
+              className="group relative overflow-hidden rounded-xl border-2 border-gray-200 dark:border-gray-700 p-6 text-left transition-all hover:border-green-500 dark:hover:border-green-400 hover:shadow-lg"
+            >
+              <div className="flex items-start gap-4">
+                <div className="rounded-lg bg-green-500 p-3 shadow-lg group-hover:scale-110 transition-transform">
+                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-lg mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                    Use Template
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Choose from pre-built templates and customize them to your needs.
+                  </p>
+                  <div className="mt-3 inline-flex items-center text-xs font-semibold text-green-600 dark:text-green-400">
+                    Quick start →
                   </div>
                 </div>
-              </button>
-            </div>
+              </div>
+            </button>
           </div>
         )}
 
@@ -229,6 +232,18 @@ const CreateFormDialog: React.FC<Props> = ({
         )}
       </DialogContent>
     </Dialog>
+    
+    {/* Template Selection Dialog */}
+    <TemplateDialog 
+      open={templateDialogOpen} 
+      onOpenChange={(isOpen) => {
+        setTemplateDialogOpen(isOpen);
+        // Re-open main dialog when template dialog closes
+        if (!isOpen) {
+          setOpen(true);
+        }
+      }} 
+    />
     </>
   );
 };

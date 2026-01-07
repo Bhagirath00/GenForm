@@ -1,0 +1,134 @@
+{
+  "id": "student_admission_1",
+  "category": "Student",
+  "name": "School Admission Form",
+  "description": "Comprehensive student admission form for schools with student and parent information",
+  "content": {
+    "formTitle": "Student Admission Form",
+    "formDescription": "Welcome! Please fill out this form to complete the student admission process.",
+    "formFields": [
+      {
+        "id": "field-student-name",
+        "name": "student_name",
+        "label": "Student Full Name",
+        "placeholder": "Enter student's full name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-student-dob",
+        "name": "date_of_birth",
+        "label": "Date of Birth",
+        "placeholder": "DD/MM/YYYY",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "field-student-gender",
+        "name": "gender",
+        "label": "Gender",
+        "placeholder": "Select gender",
+        "type": "select",
+        "options": ["Male", "Female", "Other", "Prefer not to say"],
+        "required": true
+      },
+      {
+        "id": "field-student-grade",
+        "name": "grade_applying",
+        "label": "Grade/Class Applying For",
+        "placeholder": "e.g., Grade 5, 10th Standard",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-student-previous-school",
+        "name": "previous_school",
+        "label": "Previous School Name",
+        "placeholder": "Enter previous school name (if applicable)",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "field-parent-name",
+        "name": "parent_guardian_name",
+        "label": "Parent/Guardian Full Name",
+        "placeholder": "Enter parent or guardian's full name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-parent-relationship",
+        "name": "relationship",
+        "label": "Relationship to Student",
+        "placeholder": "Select relationship",
+        "type": "select",
+        "options": ["Mother", "Father", "Guardian", "Other"],
+        "required": true
+      },
+      {
+        "id": "field-parent-email",
+        "name": "parent_email",
+        "label": "Parent/Guardian Email",
+        "placeholder": "parent@example.com",
+        "type": "email",
+        "required": true
+      },
+      {
+        "id": "field-parent-phone",
+        "name": "parent_phone",
+        "label": "Parent/Guardian Phone Number",
+        "placeholder": "+91 98765 43210",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "id": "field-address",
+        "name": "home_address",
+        "label": "Home Address",
+        "placeholder": "House No., Street, Area, City, State, PIN Code",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "id": "field-emergency-contact",
+        "name": "emergency_contact",
+        "label": "Emergency Contact Name",
+        "placeholder": "Name of emergency contact person",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-emergency-phone",
+        "name": "emergency_phone",
+        "label": "Emergency Contact Phone",
+        "placeholder": "+91 98765 43210",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "id": "field-medical-conditions",
+        "name": "medical_conditions",
+        "label": "Medical Conditions or Allergies",
+        "placeholder": "Please list any medical conditions, allergies, or special requirements",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "id": "field-special-requirements",
+        "name": "special_requirements",
+        "label": "Special Educational Requirements",
+        "placeholder": "Any learning accommodations or special needs",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "id": "field-extracurricular",
+        "name": "extracurricular_interests",
+        "label": "Extracurricular Interests",
+        "placeholder": "Sports, music, arts, clubs, etc.",
+        "type": "textarea",
+        "required": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "id": "job_basic_1",
+  "category": "Job",
+  "name": "Job Application Form",
+  "description": "Professional job application form with personal details, experience, and qualifications",
+  "content": {
+    "formTitle": "Job Application Form",
+    "formDescription": "Thank you for your interest in joining our team. Please fill out this application form completely.",
+    "formFields": [
+      {
+        "id": "field-personal-name",
+        "name": "full_name",
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-personal-email",
+        "name": "email",
+        "label": "Email Address",
+        "placeholder": "your.email@example.com",
+        "type": "email",
+        "required": true
+      },
+      {
+        "id": "field-personal-phone",
+        "name": "phone",
+        "label": "Phone Number",
+        "placeholder": "+91 98765 43210",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "id": "field-personal-address",
+        "name": "address",
+        "label": "Current Address",
+        "placeholder": "House No., Street, Area, City, State, PIN Code",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "id": "field-job-position",
+        "name": "position",
+        "label": "Position Applied For",
+        "placeholder": "e.g., Software Engineer, Marketing Manager",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-job-availability",
+        "name": "start_date",
+        "label": "Available Start Date",
+        "placeholder": "DD/MM/YYYY",
+        "type": "date",
+        "required": true
+      },
+      {
+        "id": "field-job-employment-type",
+        "name": "employment_type",
+        "label": "Preferred Employment Type",
+        "placeholder": "Select employment type",
+        "type": "select",
+        "options": ["Full-time", "Part-time", "Contract", "Internship"],
+        "required": true
+      },
+      {
+        "id": "field-education-level",
+        "name": "education",
+        "label": "Highest Education Level",
+        "placeholder": "Select your education level",
+        "type": "select",
+        "options": ["High School", "Associate Degree", "Bachelor's Degree", "Master's Degree", "Doctorate", "Other"],
+        "required": true
+      },
+      {
+        "id": "field-experience-years",
+        "name": "years_experience",
+        "label": "Years of Relevant Experience",
+        "placeholder": "e.g., 3",
+        "type": "number",
+        "required": true
+      },
+      {
+        "id": "field-experience-summary",
+        "name": "experience_summary",
+        "label": "Brief Summary of Experience",
+        "placeholder": "Describe your relevant work experience and accomplishments",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "id": "field-skills",
+        "name": "skills",
+        "label": "Key Skills",
+        "placeholder": "List your key skills separated by commas",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "id": "field-resume",
+        "name": "resume",
+        "label": "Resume/CV",
+        "placeholder": "Upload your resume (PDF or DOC)",
+        "type": "file",
+        "required": true
+      },
+      {
+        "id": "field-cover-letter",
+        "name": "cover_letter",
+        "label": "Cover Letter",
+        "placeholder": "Tell us why you're interested in this position",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "id": "field-salary-expectations",
+        "name": "salary_expectations",
+        "label": "Salary Expectations (Annual)",
+        "placeholder": "e.g., ₹6,00,000 - ₹8,00,000",
+        "type": "text",
+        "required": false
+      },
+      {
+        "id": "field-references",
+        "name": "references",
+        "label": "Professional References",
+        "placeholder": "Please provide contact information for 2-3 professional references",
+        "type": "textarea",
+        "required": false
+      }
+    ]
+  }
+}
