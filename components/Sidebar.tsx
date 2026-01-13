@@ -40,9 +40,9 @@ const DashboardSidebar = () => {
 
   return (
     <>
-      {/* Hamburger for mobile */}
+      {/* Hamburger for mobile - fixed at top */}
       <button
-        className="md:hidden p-4"
+        className="md:hidden fixed top-0 left-0 z-50 p-4 bg-white shadow-md"
         onClick={() => setSidebarOpen(true)}
         aria-label="Open sidebar"
       >
