@@ -1,0 +1,49 @@
+{
+  "id": "feedback_template_1",
+  "name": "Customer Feedback Form",
+  "description": "Template to collect customer feedback and satisfaction.",
+  "category": "Feedback",
+  "content": {
+    "formTitle": "Customer Feedback Form",
+    "formDescription": "We value your feedback! Please share your thoughts and experiences.",
+    "formFields": [
+      {
+        "id": "rating",
+        "name": "overall_satisfaction",
+        "label": "Overall Satisfaction",
+        "type": "text",
+        "required": true,
+        "placeholder": "Rate from 1-5"
+      },
+      {
+        "id": "service_type",
+        "name": "service_type",
+        "label": "Service Type",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Product",
+          "Support",
+          "Website",
+          "Other"
+        ]
+      },
+      {
+        "id": "recommendation",
+        "name": "recommendation",
+        "label": "Likelihood to Recommend (1-10)",
+        "type": "number",
+        "required": true,
+        "placeholder": "Rate from 1-10"
+      },
+      {
+        "id": "comments",
+        "name": "comments",
+        "label": "Additional Comments",
+        "type": "textarea",
+        "required": false,
+        "placeholder": "Share your thoughts and suggestions..."
+      }
+    ]
+  }
+}

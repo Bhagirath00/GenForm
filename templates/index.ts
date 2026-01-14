@@ -4,6 +4,8 @@
 import jobTemplate from "@/templates/Job_Template/1.json";
 import studentTemplate from "@/templates/Student_Template/1.json";
 import orderTemplate from "@/templates/Order_Template/1.json";
+import feedbackTemplate1 from "./Feedback_Template/1.json";
+
 
 import { Template } from "@/types/template";
 
@@ -12,6 +14,7 @@ export const ALL_TEMPLATES: Template[] = [
   jobTemplate as Template,
   studentTemplate as Template,
   orderTemplate as Template,
+  feedbackTemplate1 as Template,
 ];
 
 // Add new templates here as they are contributed:
