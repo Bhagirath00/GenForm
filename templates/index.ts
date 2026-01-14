@@ -16,7 +16,6 @@ export const ALL_TEMPLATES: Template[] = [
   studentTemplate as Template,
   orderTemplate as Template,
   contactUsTemplate as Template,
-
   feedbackTemplate1 as Template,
 ];
 
