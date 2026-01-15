@@ -7,6 +7,7 @@ import orderTemplate from "@/templates/Order_Template/1.json";
 import contactUsTemplate from "@/templates/ContactUs_Template/1.json";
 import feedbackTemplate1 from "./Feedback_Template/1.json";
 import eventTemplate from "@/templates/Event_Template/1.json";
+import healthcareTemplate from "@/templates/Healthcare_Template/1.json";
 
 
 
@@ -20,6 +21,7 @@ export const ALL_TEMPLATES: Template[] = [
   contactUsTemplate as Template,
   feedbackTemplate1 as Template,
   eventTemplate as Template,
+  healthcareTemplate as Template,
 ];
 
 // Add new templates here as they are contributed:

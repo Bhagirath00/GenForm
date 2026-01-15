@@ -1,0 +1,148 @@
+{
+    "id": "healthcare_patient_1",
+    "category": "Healthcare",
+    "name": "Patient Registration Form",
+    "description": "Professional patient registration form for hospitals and clinics with personal, medical, and emergency contact information",
+    "content": {
+        "formTitle": "Patient Registration Form",
+        "formDescription": "Welcome! Please complete this form to register as a new patient at our facility.",
+        "formFields": [
+            {
+                "id": "field-patient-name",
+                "name": "patient_name",
+                "label": "Patient Full Name",
+                "placeholder": "Enter patient's full name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "field-patient-dob",
+                "name": "date_of_birth",
+                "label": "Date of Birth",
+                "placeholder": "DD/MM/YYYY",
+                "type": "date",
+                "required": true
+            },
+            {
+                "id": "field-patient-gender",
+                "name": "gender",
+                "label": "Gender",
+                "placeholder": "Select gender",
+                "type": "select",
+                "options": [
+                    "Male",
+                    "Female",
+                    "Other",
+                    "Prefer not to say"
+                ],
+                "required": true
+            },
+            {
+                "id": "field-patient-blood-group",
+                "name": "blood_group",
+                "label": "Blood Group",
+                "placeholder": "Select blood group",
+                "type": "select",
+                "options": [
+                    "A+",
+                    "A-",
+                    "B+",
+                    "B-",
+                    "AB+",
+                    "AB-",
+                    "O+",
+                    "O-"
+                ],
+                "required": true
+            },
+            {
+                "id": "field-patient-phone",
+                "name": "phone_number",
+                "label": "Phone Number",
+                "placeholder": "+91 98765 43210",
+                "type": "tel",
+                "required": true
+            },
+            {
+                "id": "field-patient-email",
+                "name": "email_address",
+                "label": "Email Address",
+                "placeholder": "patient@example.com",
+                "type": "email",
+                "required": true
+            },
+            {
+                "id": "field-patient-address",
+                "name": "address",
+                "label": "Address",
+                "placeholder": "House No., Street, Area, City, State, PIN Code",
+                "type": "textarea",
+                "required": true
+            },
+            {
+                "id": "field-emergency-contact-name",
+                "name": "emergency_contact_name",
+                "label": "Emergency Contact Name",
+                "placeholder": "Name of emergency contact person",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "field-emergency-contact-phone",
+                "name": "emergency_contact_phone",
+                "label": "Emergency Contact Phone",
+                "placeholder": "+91 98765 43210",
+                "type": "tel",
+                "required": true
+            },
+            {
+                "id": "field-emergency-relationship",
+                "name": "emergency_relationship",
+                "label": "Relationship to Patient",
+                "placeholder": "Select relationship",
+                "type": "select",
+                "options": [
+                    "Spouse",
+                    "Parent",
+                    "Sibling",
+                    "Child",
+                    "Friend",
+                    "Other"
+                ],
+                "required": true
+            },
+            {
+                "id": "field-patient-allergies",
+                "name": "allergies",
+                "label": "Known Allergies",
+                "placeholder": "List any known allergies (medications, food, environmental)",
+                "type": "textarea",
+                "required": false
+            },
+            {
+                "id": "field-patient-medical-history",
+                "name": "medical_history",
+                "label": "Medical History",
+                "placeholder": "Previous surgeries, chronic conditions, ongoing treatments",
+                "type": "textarea",
+                "required": false
+            },
+            {
+                "id": "field-insurance-provider",
+                "name": "insurance_provider",
+                "label": "Insurance Provider",
+                "placeholder": "Name of insurance company",
+                "type": "text",
+                "required": false
+            },
+            {
+                "id": "field-insurance-policy",
+                "name": "insurance_policy_number",
+                "label": "Insurance Policy Number",
+                "placeholder": "Enter policy number",
+                "type": "text",
+                "required": false
+            }
+        ]
+    }
+}
