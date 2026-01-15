@@ -1,0 +1,77 @@
+{
+  "id": "event_rsvp_1",
+  "category": "Event",
+  "name": "Event Registration (RSVP)",
+  "description": "Simple event registration form for meetups, workshops, and parties with guest count and dietary preferences",
+  "content": {
+    "formTitle": "Event Registration",
+    "formDescription": "Please register below for our upcoming event. Your information helps us plan better.",
+    "formFields": [
+      {
+        "id": "field-personal-name",
+        "name": "full_name",
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-personal-email",
+        "name": "email",
+        "label": "Email Address",
+        "placeholder": "your.email@example.com",
+        "type": "email",
+        "required": true
+      },
+      {
+        "id": "field-personal-phone",
+        "name": "phone",
+        "label": "Phone Number",
+        "placeholder": "+91 98765 43210",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "id": "field-event-guests",
+        "name": "number_of_guests",
+        "label": "Number of Guests (including yourself)",
+        "placeholder": "e.g., 2",
+        "type": "number",
+        "required": true
+      },
+      {
+        "id": "field-dietary-preferences",
+        "name": "dietary_preferences",
+        "label": "Dietary Preferences/Restrictions",
+        "placeholder": "e.g., Vegetarian, Vegan, Gluten-free, Nut allergy",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "id": "field-special-requirements",
+        "name": "special_requirements",
+        "label": "Special Requirements or Accommodations",
+        "placeholder": "Let us know if you need any special arrangements",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "id": "field-event-attendance",
+        "name": "will_attend",
+        "label": "Will You Be Attending?",
+        "placeholder": "Select your response",
+        "type": "select",
+        "options": ["Yes, I'll attend", "Maybe", "No, I can't attend"],
+        "required": true
+      },
+      {
+        "id": "field-comments",
+        "name": "additional_comments",
+        "label": "Additional Comments",
+        "placeholder": "Any questions or comments for the organizers?",
+        "type": "textarea",
+        "required": false
+      }
+    ]
+  }
+}
