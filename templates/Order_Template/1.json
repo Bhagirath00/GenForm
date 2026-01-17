@@ -1,0 +1,128 @@
+{
+    "id": "order_product_1",
+    "category": "Order",
+    "name": "Product Order Form",
+    "description": "Template for collecting product orders, including product selection, quantity, shipping details, and payment preferences.",
+    "content": {
+        "formTitle": "Product Order Form",
+        "formDescription": "Fill in the form to place your order.",
+        "formFields": [
+            {
+                "id": "field-order-customer-name",
+                "name": "customer_name",
+                "label": "Full Name",
+                "placeholder": "Enter your full name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "field-order-email",
+                "name": "email",
+                "label": "Email Address",
+                "placeholder": "Enter your email",
+                "type": "email",
+                "required": true
+            },
+            {
+                "id": "field-order-phone",
+                "name": "phone",
+                "label": "Phone Number",
+                "placeholder": "Enter your phone number",
+                "type": "tel",
+                "required": false
+            },
+            {
+                "id": "field-order-product",
+                "name": "product",
+                "label": "Select Product",
+                "placeholder": "Choose a product",
+                "type": "select",
+                "options": [
+                    "Cake",
+                    "Muffin",
+                    "Brownie",
+                    "Cookie"
+                ],
+                "required": true
+            },
+            {
+                "id": "field-order-quantity",
+                "name": "quantity",
+                "label": "Quantity",
+                "placeholder": "Enter quantity",
+                "type": "number",
+                "required": true
+            },
+            {
+                "id": "field-order-address",
+                "name": "shipping_address",
+                "label": "Shipping Address",
+                "placeholder": "Enter your full address",
+                "type": "textarea",
+                "required": true
+            },
+            {
+                "id": "field-order-pin-code",
+                "name": "pin_code",
+                "label": "Pin Code",
+                "placeholder": "Enter your pin code",
+                "type": "text",
+                "required": true
+            },
+            {
+                "id": "field-order-delivery-date",
+                "name": "delivery_date",
+                "label": "Preferred Delivery Date",
+                "type": "date",
+                "required": false
+            },
+            {
+                "id": "field-order-delivery-time",
+                "name": "delivery_time",
+                "label": "Preferred Delivery Time",
+                "type": "time",
+                "required": false
+            },
+            {
+                "id": "field-order-payment",
+                "name": "payment_method",
+                "label": "Payment Method",
+                "placeholder": "Select your payment method",
+                "type": "select",
+                "options": [
+                    "Credit Card",
+                    "PayPal",
+                    "Cash on Delivery"
+                ],
+                "required": true
+            },
+            {
+                "id": "field-order-notes",
+                "name": "special_instructions",
+                "label": "Special Instructions",
+                "placeholder": "Enter any special requests or instructions",
+                "type": "textarea",
+                "required": false
+            },
+            {
+                "id": "field-order-gift",
+                "name": "gift_order",
+                "label": "Is this a gift?",
+                "type": "checkbox",
+                "required": false
+            },
+            {
+                "id": "field-order-delivery-method",
+                "name": "delivery_method",
+                "label": "Delivery Method",
+                "type": "select",
+                "options": [
+                    "Standard Delivery",
+                    "Express Delivery",
+                    "Pick-up In Store"
+                ],
+                "required": true
+            }
+        ]
+    }
+}
