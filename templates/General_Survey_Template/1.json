@@ -1,0 +1,114 @@
+{
+  "id": "survey_general_1",
+  "category": "Survey",
+  "name": "General Survey & Research Poll",
+  "description": "A comprehensive template for gathering demographic data, scaling opinions, and collecting qualitative research insights.",
+  "content": {
+    "formTitle": "Community Interest & Research Survey",
+    "formDescription": "Thank you for participating. Your insights help us plan future initiatives and understand community needs.",
+    "formFields": [
+      {
+        "id": "survey-demo-age",
+        "name": "age_group",
+        "label": "Age Group",
+        "placeholder": "Select your age range",
+        "type": "select",
+        "options": ["Under 18", "18-24", "25-34", "35-44", "45-54", "55+"],
+        "required": true
+      },
+      {
+        "id": "survey-demo-occupation",
+        "name": "occupation",
+        "label": "Current Occupation",
+        "placeholder": "e.g., Student, Software Engineer, Manager",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "survey-demo-location",
+        "name": "primary_location",
+        "label": "Primary Location",
+        "placeholder": "City, Country",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "survey-demo-education",
+        "name": "education_level",
+        "label": "Highest Level of Education",
+        "placeholder": "Select education level",
+        "type": "select",
+        "options": ["High School", "Undergraduate", "Postgraduate", "PhD/Doctorate", "Other"],
+        "required": false
+      },
+      {
+        "id": "survey-pref-interest",
+        "name": "primary_interest",
+        "label": "Primary Area of Interest",
+        "placeholder": "Select an interest",
+        "type": "select",
+        "options": ["Technology", "Business", "Arts & Design", "Science", "Healthcare", "Other"],
+        "required": true
+      },
+      {
+        "id": "survey-scale-importance",
+        "name": "topic_importance",
+        "label": "Topic Importance (Scale 1-10)",
+        "placeholder": "Select a rating",
+        "type": "select",
+        "options": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+        "required": true
+      },
+      {
+        "id": "survey-behavior-hours",
+        "name": "weekly_hours",
+        "label": "Hours Spent Weekly on This Topic",
+        "placeholder": "e.g., 10",
+        "type": "number",
+        "required": true
+      },
+      {
+        "id": "survey-behavior-freq",
+        "name": "usage_frequency",
+        "label": "Engagement Frequency",
+        "placeholder": "Select frequency",
+        "type": "select",
+        "options": ["Daily", "Weekly", "Monthly", "Rarely", "Never"],
+        "required": true
+      },
+      {
+        "id": "survey-qual-challenge",
+        "name": "biggest_challenge",
+        "label": "Biggest Challenge Faced",
+        "placeholder": "Describe your challenges here...",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "id": "survey-qual-solution",
+        "name": "proposed_solution",
+        "label": "Suggested Improvements",
+        "placeholder": "What changes would make your life easier?",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "id": "survey-source-discovery",
+        "name": "discovery_source",
+        "label": "How did you hear about this survey?",
+        "placeholder": "Select source",
+        "type": "select",
+        "options": ["Social Media", "Email", "Word of Mouth", "Advertisement", "Other"],
+        "required": false
+      },
+      {
+        "id": "survey-open-feedback",
+        "name": "additional_thoughts",
+        "label": "Additional Thoughts",
+        "placeholder": "Type your feedback here...",
+        "type": "textarea",
+        "required": false
+      }
+    ]
+  }
+}
