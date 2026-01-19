@@ -19,4 +19,4 @@ This template provides a comprehensive structure for gathering demographic data,
 
 ## Validation & Types
 - **Schema**: Validation logic is handled in `schema.ts` using Zod.
-- **TypeScript**: Data structures are defined in `types.ts`.
+- **TypeScript**: Data structures are defined in `types.ts`.  
