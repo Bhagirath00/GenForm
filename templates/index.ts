@@ -10,6 +10,7 @@ import eventTemplate from "@/templates/Event_Template/1.json";
 import volunteerTemplate from "@/templates/Volunteer_Template/1.json";
 import healthcareTemplate from "@/templates/Healthcare_Template/1.json";
 import generalSurveyTemplate from "@/templates/General_Survey_Template/1.json";
+import partnershipTemplate from "@/templates/Partnership_Template/1.json";
 
 
 import { Template } from "@/types/template";
@@ -25,6 +26,7 @@ export const ALL_TEMPLATES: Template[] = [
   volunteerTemplate as Template,
   healthcareTemplate as Template,
   generalSurveyTemplate as Template,
+  partnershipTemplate as Template,
 ];
 
 // Add new templates here as they are contributed:

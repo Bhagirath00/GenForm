@@ -1,0 +1,96 @@
+{
+  "id": "partnership_sponsorship_1",
+  "category": "Partnership",
+  "name": "Corporate Sponsorship & Partnership",
+  "description": "A professional B2B intake form for organizations to handle inbound sponsorship inquiries and strategic partnerships.",
+  "content": {
+    "formTitle": "Sponsorship & Partnership Inquiry",
+    "formDescription": "Please provide your organization's details and sponsorship interests to help us tailor our collaboration.",
+    "formFields": [
+      {
+        "id": "field-partnership-org-name",
+        "name": "organization_name",
+        "label": "Organization Name",
+        "placeholder": "e.g., Tech Corp Pvt Ltd",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-partnership-industry",
+        "name": "industry_sector",
+        "label": "Industry Sector",
+        "placeholder": "Select your industry",
+        "type": "select",
+        "options": ["Technology", "Finance", "Education", "Healthcare", "Manufacturing", "Other"],
+        "required": true
+      },
+      {
+        "id": "field-partnership-website",
+        "name": "official_website",
+        "label": "Official Website",
+        "placeholder": "https://www.company.com",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-partnership-contact-name",
+        "name": "contact_person",
+        "label": "Professional Contact Name",
+        "placeholder": "Enter full name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-partnership-contact-email",
+        "name": "contact_email",
+        "label": "Professional Email Address",
+        "placeholder": "name@company.com",
+        "type": "email",
+        "required": true
+      },
+      {
+        "id": "field-partnership-event-name",
+        "name": "target_event",
+        "label": "Target Event Name",
+        "placeholder": "e.g., Electrothon 8.0",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "field-partnership-tier",
+        "name": "sponsorship_tier",
+        "label": "Interested Sponsorship Tier",
+        "placeholder": "Select a tier",
+        "type": "select",
+        "options": ["Title Sponsor", "Platinum (Tier 1)", "Gold (Tier 2)", "Silver (Tier 3)", "In-Kind/Partner"],
+        "required": true
+      },
+      {
+        "id": "field-partnership-budget",
+        "name": "estimated_budget",
+        "label": "Estimated Budget (INR)",
+        "placeholder": "Select budget range",
+        "type": "select",
+        "options": ["Under ₹50,000", "₹50,000 - ₹2,00,000", "₹2,00,000 - ₹5,00,000", "Above ₹5,00,000"],
+        "required": true
+      },
+      {
+        "id": "field-partnership-objectives",
+        "name": "marketing_objectives",
+        "label": "Marketing & Strategic Objectives",
+        "placeholder": "What are your goals for this partnership?",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "id": "field-partnership-comm-mode",
+        "name": "preferred_communication",
+        "label": "Preferred Communication Mode",
+        "placeholder": "Select mode",
+        "type": "select",
+        "options": ["Email", "Phone Call", "Video Meeting", "In-Person"],
+        "required": false
+      }
+    ]
+  }
+}
