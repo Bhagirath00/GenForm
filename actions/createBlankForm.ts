@@ -35,6 +35,7 @@ export const createBlankForm = async () => {
       data: {
         ownerId: userId,
         content: JSON.stringify(blankFormContent),
+        description: "", // Blank forms have no description
         published: false,
       },
     });

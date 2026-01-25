@@ -40,8 +40,9 @@ export const generateForm = async (prevState: unknown, formData: FormData) => {
 
     const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
+    // Using gemini-2.5-flash (newer model with better limits)
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash",
     });
 
     const generationConfig = {
@@ -89,7 +90,38 @@ Requirements:
 - Provide meaningful placeholder text for each field based on its label and type.
 - Make field names lowercase and use underscores (e.g., "first_name", "email_address").`;
 
-    const result = await chatSession.sendMessage(`${description} ${prompt}`);
+    // Retry logic with exponential backoff for rate limiting
+    let result;
+    let lastError;
+    const maxRetries = 3;
+    
+    for (let attempt = 0; attempt < maxRetries; attempt++) {
+      try {
+        result = await chatSession.sendMessage(`${description} ${prompt}`);
+        break; // Success! Exit the retry loop
+      } catch (error: any) {
+        lastError = error;
+        
+        // Check if it's a rate limit error
+        if (error?.status === 429) {
+          // If this is not the last attempt, wait and retry
+          if (attempt < maxRetries - 1) {
+            const waitTime = Math.pow(2, attempt) * 1000; // Exponential backoff: 1s, 2s, 4s
+            console.log(`Rate limit hit. Retrying in ${waitTime}ms... (Attempt ${attempt + 1}/${maxRetries})`);
+            await new Promise(resolve => setTimeout(resolve, waitTime));
+            continue;
+          }
+        }
+        
+        // If it's not a rate limit error, or it's the last attempt, throw the error
+        throw error;
+      }
+    }
+    
+    // If we exhausted all retries
+    if (!result) {
+      throw lastError;
+    }
     const responseText = result.response.text();
     
     // Extract JSON from response (gemini-pro might wrap it in markdown)
@@ -110,6 +142,7 @@ Requirements:
       data: {
         ownerId: user.id,
         content: formContent,
+        description: description, // Save the user's prompt as description
       },
     });
 
@@ -127,7 +160,7 @@ Requirements:
     if (error?.status === 429 || error?.statusText === 'Too Many Requests') {
       return {
         success: false,
-        message: "Too many requests. Please wait a moment and try again. The free tier has rate limits.",
+        message: "API rate limit reached. This could mean:\n1. You've used up your free tier quota\n2. Too many requests in a short time\n\nPlease wait a few moments and try again. If this persists, check your Google AI API quota at: https://ai.google.dev/gemini-api/docs/rate-limits",
       };
     }
     
@@ -135,7 +168,7 @@ Requirements:
     if (error?.status) {
       return {
         success: false,
-        message: `API Error: ${error.statusText || 'Failed to generate form'}. Please try again.`,
+        message: `API Error (${error.status}): ${error.statusText || 'Failed to generate form'}. Please check your API key and try again.`,
       };
     }
     
