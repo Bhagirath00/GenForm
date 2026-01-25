@@ -26,7 +26,7 @@ const Submisions = async ({
       formId: form.id,
     },
     include: {
-      form: true,
+      Form: true,
     },
   });
   

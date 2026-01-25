@@ -433,7 +433,7 @@ const LandingPage = ({ userId }: LandingPageProps) => {
               whole header (question row) is clickable and animations are
               consistent across browsers. */}
             <div
-              className={`group rounded-2xl border border-gray-200/70 dark:border-gray-700/50 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm cursor-pointer transition-all duration-500 ease-[cubic-bezier(.2,.8,.2,1)] hover:bg-white/80 dark:hover:bg-gray-900/30 hover:shadow-md hover:shadow-gray-300/40 dark:hover:shadow-none focus-within:ring-2 focus-within:ring-green-500/20 focus-within:border-green-200 ${openFaq === "forms" ? "shadow-xl shadow-gray-300/40 border-green-200" : ""
+              className={`group rounded-2xl border border-gray-200/70 dark:border-gray-700/50 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm cursor-pointer transition-all duration-500 ease-smooth-in-out hover:bg-white/80 dark:hover:bg-gray-900/30 hover:shadow-md hover:shadow-gray-300/40 dark:hover:shadow-none focus-within:ring-2 focus-within:ring-green-500/20 focus-within:border-green-200 ${openFaq === "forms" ? "shadow-xl shadow-gray-300/40 border-green-200" : ""
                 }`}
             >
               <button
@@ -446,7 +446,7 @@ const LandingPage = ({ userId }: LandingPageProps) => {
                 <HelpCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1 sm:mt-0" />
                 <span className="flex-1">How many forms can I create?</span>
                 <span
-                  className={`ml-3 transform transition-transform duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "forms" ? "rotate-180" : ""
+                  className={`ml-3 transform transition-transform duration-700 ease-smooth-out ${openFaq === "forms" ? "rotate-180" : ""
                     }`}
                 >
                   <svg
@@ -467,12 +467,12 @@ const LandingPage = ({ userId }: LandingPageProps) => {
                 {/* Content expansion uses a grid-rows transition to mimic
                     auto-height; text also fades/slides for a smooth feel */}
                 <div
-                  className={`grid transition-[grid-template-rows] duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "forms" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  className={`grid transition-[grid-template-rows] duration-700 ease-smooth-out ${openFaq === "forms" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                     }`}
                 >
                   <div className="overflow-hidden">
                     <p
-                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "forms"
+                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-smooth-out ${openFaq === "forms"
                           ? "opacity-100 translate-y-0"
                           : "opacity-0 translate-y-1"
                         }`}
@@ -488,7 +488,7 @@ const LandingPage = ({ userId }: LandingPageProps) => {
 
             {/* FAQ 2 */}
             <div
-              className={`group rounded-2xl border border-gray-200/70 dark:border-gray-700/50 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm cursor-pointer transition-all duration-500 ease-[cubic-bezier(.2,.8,.2,1)] hover:bg-white/80 dark:hover:bg-gray-900/30 hover:shadow-md hover:shadow-gray-300/40 dark:hover:shadow-none focus-within:ring-2 focus-within:ring-green-500/20 focus-within:border-green-200 ${openFaq === "customize" ? "shadow-xl shadow-gray-300/40 border-green-200" : ""
+              className={`group rounded-2xl border border-gray-200/70 dark:border-gray-700/50 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm cursor-pointer transition-all duration-500 ease-smooth-in-out hover:bg-white/80 dark:hover:bg-gray-900/30 hover:shadow-md hover:shadow-gray-300/40 dark:hover:shadow-none focus-within:ring-2 focus-within:ring-green-500/20 focus-within:border-green-200 ${openFaq === "customize" ? "shadow-xl shadow-gray-300/40 border-green-200" : ""
                 }`}
             >
               <button
@@ -501,7 +501,7 @@ const LandingPage = ({ userId }: LandingPageProps) => {
                 <HelpCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1 sm:mt-0" />
                 <span className="flex-1">Can I customize the forms?</span>
                 <span
-                  className={`ml-3 transform transition-transform duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "customize" ? "rotate-180" : ""
+                  className={`ml-3 transform transition-transform duration-700 ease-smooth-out ${openFaq === "customize" ? "rotate-180" : ""
                     }`}
                 >
                   <svg
@@ -522,12 +522,12 @@ const LandingPage = ({ userId }: LandingPageProps) => {
                 {/* Content expansion uses a grid-rows transition to mimic
                     auto-height; text also fades/slides for a smooth feel */}
                 <div
-                  className={`grid transition-[grid-template-rows] duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "customize" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  className={`grid transition-[grid-template-rows] duration-700 ease-smooth-out ${openFaq === "customize" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                     }`}
                 >
                   <div className="overflow-hidden">
                     <p
-                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "customize"
+                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-smooth-out ${openFaq === "customize"
                           ? "opacity-100 translate-y-0"
                           : "opacity-0 translate-y-1"
                         }`}
@@ -543,7 +543,7 @@ const LandingPage = ({ userId }: LandingPageProps) => {
 
             {/* FAQ 3 */}
             <div
-              className={`group rounded-2xl border border-gray-200/70 dark:border-gray-700/50 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm cursor-pointer transition-all duration-500 ease-[cubic-bezier(.2,.8,.2,1)] hover:bg-white/80 dark:hover:bg-gray-900/30 hover:shadow-md hover:shadow-gray-300/40 dark:hover:shadow-none focus-within:ring-2 focus-within:ring-green-500/20 focus-within:border-green-200 ${openFaq === "submissions" ? "shadow-xl shadow-gray-300/40 border-green-200" : ""
+              className={`group rounded-2xl border border-gray-200/70 dark:border-gray-700/50 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm cursor-pointer transition-all duration-500 ease-smooth-in-out hover:bg-white/80 dark:hover:bg-gray-900/30 hover:shadow-md hover:shadow-gray-300/40 dark:hover:shadow-none focus-within:ring-2 focus-within:ring-green-500/20 focus-within:border-green-200 ${openFaq === "submissions" ? "shadow-xl shadow-gray-300/40 border-green-200" : ""
                 }`}
             >
               <button
@@ -558,7 +558,7 @@ const LandingPage = ({ userId }: LandingPageProps) => {
                 <HelpCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-1 sm:mt-0" />
                 <span className="flex-1">How do I see the submissions?</span>
                 <span
-                  className={`ml-3 transform transition-transform duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "submissions" ? "rotate-180" : ""
+                  className={`ml-3 transform transition-transform duration-700 ease-smooth-out ${openFaq === "submissions" ? "rotate-180" : ""
                     }`}
                 >
                   <svg
@@ -579,12 +579,12 @@ const LandingPage = ({ userId }: LandingPageProps) => {
                 {/* Content expansion uses a grid-rows transition to mimic
                     auto-height; text also fades/slides for a smooth feel */}
                 <div
-                  className={`grid transition-[grid-template-rows] duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "submissions" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  className={`grid transition-[grid-template-rows] duration-700 ease-smooth-out ${openFaq === "submissions" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                     }`}
                 >
                   <div className="overflow-hidden">
                     <p
-                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "submissions"
+                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-smooth-out ${openFaq === "submissions"
                           ? "opacity-100 translate-y-0"
                           : "opacity-0 translate-y-1"
                         }`}

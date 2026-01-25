@@ -55,6 +55,10 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		transitionTimingFunction: {
+  			'smooth-out': 'cubic-bezier(.16,.84,.44,1)',
+  			'smooth-in-out': 'cubic-bezier(.2,.8,.2,1)'
   		}
   	}
   },

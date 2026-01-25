@@ -3,6 +3,7 @@
 import prisma from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
+import { v4 as uuidv4 } from "uuid";
 
 export const createBlankForm = async () => {
   try {
@@ -31,12 +32,16 @@ export const createBlankForm = async () => {
       ],
     };
 
+    const formUuid = uuidv4();
+
     const newForm = await prisma.form.create({
       data: {
         ownerId: userId,
         content: JSON.stringify(blankFormContent),
         description: "", // Blank forms have no description
         published: false,
+        uuid: formUuid,
+        shareUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/forms/${formUuid}`,
       },
     });
 

@@ -5,6 +5,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { GoogleGenerativeAI } from "@google/generative-ai"; // Import Gemini SDK
+import { v4 as uuidv4 } from "uuid";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY; // Ensure the Gemini API key is set in your environment variables
 
@@ -137,12 +138,16 @@ Requirements:
 
     console.log("Generated form ->", formContent);
 
+    const formUuid = uuidv4();
+
     // Save the generated form to the database
     const form = await prisma.form.create({
       data: {
         ownerId: user.id,
         content: formContent,
         description: description, // Save the user's prompt as description
+        uuid: formUuid,
+        shareUrl: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/forms/${formUuid}`,
       },
     });
 
