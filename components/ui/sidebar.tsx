@@ -562,7 +562,17 @@ const SidebarMenuButton = React.forwardRef<
         data-sidebar="menu-button"
         data-size={size}
         data-active={isActive}
-        className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
+        className={cn(
+          sidebarMenuButtonVariants({ variant, size }),
+         
+          "group flex items-center gap-3 rounded-md px-3 py-2",
+          "transition-all duration-200 ease-in-out",
+          "hover:bg-gray-100 hover:translate-x-1",
+          "dark:hover:bg-white/10",
+          isActive &&
+            "bg-gray-200 dark:bg-white/15 font-semibold translate-x-1",
+          className
+        )}
         {...props}
       />
     )
@@ -590,7 +600,9 @@ const SidebarMenuButton = React.forwardRef<
     )
   }
 )
+
 SidebarMenuButton.displayName = "SidebarMenuButton"
+
 
 const SidebarMenuAction = React.forwardRef<
   HTMLButtonElement,
