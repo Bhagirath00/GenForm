@@ -14,7 +14,6 @@
 </div>
 
 ---
-
 ## 🤝 Contributors
 
 We ❤️ our contributors!  
