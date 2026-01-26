@@ -14,6 +14,7 @@
 </div>
 
 ---
+
 ## 🤝 Contributors
 
 We ❤️ our contributors!  
@@ -94,12 +95,12 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
         <sub><b>Vishwanath Patre</b></sub>
       </a>
     </td>
-        <td align="center">
+    <td align="center">
       <a href="https://github.com/shatrughantwt">
         <img src="https://github.com/shatrughantwt.png" width="100px;" /><br />
         <sub><b>Shatrughan</b></sub>
       </a>
-      </td>
+    </td>
     <td align="center">
       <a href="https://github.com/roshankumar0036singh">
         <img src="https://github.com/roshankumar0036singh.png" width="100px;" /><br />
@@ -126,12 +127,13 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
     </td>
   </tr>
   <tr>
-      <td align="center">
+    <td align="center">
       <a href="https://github.com/Trapti10">
         <img src="https://github.com/Trapti10.png" width="100px;" /><br />
         <sub><b>Trapti Vishwakarma</b></sub>
       </a>
-      <td align="center">
+    </td>
+    <td align="center">
       <a href="https://github.com/k4rth1k-h3gd3">
         <img src="https://github.com/k4rth1k-h3gd3.png" width="100px;" /><br />
         <sub><b>Karthik Hegde</b></sub>
