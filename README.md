@@ -16,7 +16,14 @@
 ---
 
 ## 📍 Jump To
-[**✨ Features**](#-key-features) • [**🛠️ Technology Stack**](#technology-stack) • [**🚀 Getting Started**](#-getting-started) • [**🤝 Contributors**](#-contributors)
+
+- [**🤝 Contributors**](#-contributors)  
+- [**✨ Key Features**](#-key-features)  
+- [**🛠️ Technology Stack**](#technology-stack)  
+- [**📂 Project Structure**](#-project-structure)  
+- [**🚀 Getting Started**](#-getting-started)  
+- [**📖 Usage Guide**](#-usage-guide)  
+- [**🆘 Support**](#-support)
 
 ---
 ## 🤝 Contributors
