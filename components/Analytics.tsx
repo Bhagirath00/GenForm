@@ -183,29 +183,38 @@ const Analytics: React.FC<Props> = ({ data }) => {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            {data.topForms.map((form, i) => (
-              <Link
-                key={form.id}
-                href={`/dashboard/forms/${form.id}/submissions`}
-                className="block p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-              >
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-sm font-bold">
-                      {i + 1}
+            {data.topForms.length > 0 ? (
+              <>
+                {data.topForms.map((form, i) => (
+                  <Link
+                    key={form.id}
+                    href={`/dashboard/forms/${form.id}/submissions`}
+                    className="block p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                  >
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-sm font-bold">
+                          {i + 1}
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium truncate">{form.title}</p>
+                          <p className="text-xs text-gray-500">{form.published ? "Published" : "Draft"}</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-lg font-bold text-green-500">{form.submissions}</p>
+                        <p className="text-xs text-gray-500">responses</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-sm font-medium truncate">{form.title}</p>
-                      <p className="text-xs text-gray-500">{form.published ? "Published" : "Draft"}</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-lg font-bold text-green-500">{form.submissions}</p>
-                    <p className="text-xs text-gray-500">responses</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                  </Link>
+                ))}
+              </>
+            ) : (
+              <div className="text-center py-8 text-gray-500">
+                <FileText className="w-12 h-12 mx-auto mb-2 opacity-50" />
+                <p className="text-sm">No forms yet</p>
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>
@@ -218,20 +227,29 @@ const Analytics: React.FC<Props> = ({ data }) => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          {data.recentActivity.map(a => (
-            <Link
-              key={a.id}
-              href={`/dashboard/forms/${a.formId}/submissions`}
-              className="flex justify-between p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-            >
-              <div>
-                <p className="text-sm font-medium">
-                  New submission to <span className="text-green-500">{a.formTitle}</span>
-                </p>
-                <p className="text-xs text-gray-500">{getTimeAgo(a.createdAt)}</p>
-              </div>
-            </Link>
-          ))}
+          {data.recentActivity.length > 0 ? (
+            <>
+              {data.recentActivity.map(a => (
+                <Link
+                  key={a.id}
+                  href={`/dashboard/forms/${a.formId}/submissions`}
+                  className="flex justify-between p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                >
+                  <div>
+                    <p className="text-sm font-medium">
+                      New submission to <span className="text-green-500">{a.formTitle}</span>
+                    </p>
+                    <p className="text-xs text-gray-500">{getTimeAgo(a.createdAt)}</p>
+                  </div>
+                </Link>
+              ))}
+            </>
+          ) : (
+            <div className="text-center py-8 text-gray-500">
+              <Activity className="w-12 h-12 mx-auto mb-2 opacity-50" />
+              <p className="text-sm">No recent activity</p>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>
