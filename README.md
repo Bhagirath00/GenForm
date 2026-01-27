@@ -242,13 +242,17 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
 
 ## Technology Stack
 
-| Category | Technology | Usage |
-| :--- | :--- | :--- |
-| **Frontend** | <img src="https://skillicons.dev/icons?i=nextjs" width="20"/> **Next.js 15** | App Router & Server Components |
-| **Language** | <img src="https://skillicons.dev/icons?i=ts" width="20"/> **TypeScript** | Type-safe Development |
-| **Styling** | <img src="https://skillicons.dev/icons?i=tailwind" width="20"/> **Tailwind CSS** | Modern UI & Responsive Design |
-| **Database** | <img src="https://skillicons.dev/icons?i=postgres" width="20"/> **PostgreSQL** | Relational data via Supabase |
-| **AI Engine** | <img src="https://skillicons.dev/icons?i=google" width="20"/> **Gemini API** | Natural Language Form Parsing |
+| Category        | Technology                                                                 | Usage                               |
+| :---            | :---                                                                       | :---                                |
+| **Frontend**    | <img src="https://skillicons.dev/icons?i=nextjs" width="20"/> **Next.js 15** | App Router & Server Components      |
+| **Language**    | <img src="https://skillicons.dev/icons?i=ts" width="20"/> **TypeScript**    | Type-safe Development               |
+| **Styling**     | <img src="https://skillicons.dev/icons?i=tailwind" width="20"/> **Tailwind CSS** | Modern UI & Responsive Design   |
+| **Database**    | <img src="https://skillicons.dev/icons?i=postgres" width="20"/> **PostgreSQL** | Relational data via Supabase     |
+| **AI Engine**   | <img src="https://skillicons.dev/icons?i=google" width="20"/> **Gemini API** | Natural Language Form Parsing       |
+| **Payments**    | <img src="https://skillicons.dev/icons?i=stripe" width="20"/> **Stripe**    | Secure Payment Gateway              |
+| **Package Mgr** | <img src="https://skillicons.dev/icons?i=npm" width="20"/> **npm**          | Dependency & Package Management     |
+| **Runtime**     | <img src="https://skillicons.dev/icons?i=nodejs" width="20"/> **Node.js**   | Server-side JavaScript Execution    |
+| **Auth**        | <img src="https://skillicons.dev/icons?i=clerk" width="20"/> **Clerk**      | Authentication & User Management    |
 
 ---
 
