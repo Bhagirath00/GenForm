@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle, Sparkles, Zap, Shield, Users, BarChart3, Clock
 import Link from "next/link";
 import PricingPage from "./PricingPage";
 import Footer from "./Footer";
+import { StatCounter } from "./ui/StatCounter";
 
 interface LandingPageProps {
   userId?: string | null;
@@ -286,24 +287,24 @@ const LandingPage = ({ userId }: LandingPageProps) => {
           <div className="relative group bg-green-500 animate-breathe rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 mb-12 sm:mb-16 md:mb-20 shadow-2xl shadow-green-500/20 transition-all shadow-xl duration-500 hover:scale-[1.02] border border-white/10 hover:border-white ">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center text-white">
               <div>
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
-                  1k+
+                <div className="text-4xl font-bold">
+                  <StatCounter endValue={1} suffix="k+" />
                 </div>
                 <div className="text-xs sm:text-sm md:text-base text-green-50">
                   Forms Created
                 </div>
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
-                  500+
+                <div className="text-4xl font-bold">
+                  <StatCounter endValue={500} suffix="+" />
                 </div>
                 <div className="text-xs sm:text-sm md:text-base text-green-50">
                   Happy Users
                 </div>
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
-                  99.9%
+                <div className="text-4xl font-bold">
+                  <StatCounter endValue={99.9} suffix="%" decimals={1} />
                 </div>
                 <div className="text-xs sm:text-sm md:text-base text-green-50">
                   Uptime
@@ -472,9 +473,9 @@ const LandingPage = ({ userId }: LandingPageProps) => {
                 >
                   <div className="overflow-hidden">
                     <p
-                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-smooth-out ${openFaq === "forms"
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-1"
+                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "forms"
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-1"
                         }`}
                     >
                       With our free plan, you can create up to 3 forms with AI. If you
@@ -584,9 +585,9 @@ const LandingPage = ({ userId }: LandingPageProps) => {
                 >
                   <div className="overflow-hidden">
                     <p
-                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-smooth-out ${openFaq === "submissions"
-                          ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-1"
+                      className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 transition-all duration-700 ease-[cubic-bezier(.16,.84,.44,1)] ${openFaq === "submissions"
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-1"
                         }`}
                     >
                       All submissions for your forms are available in your dashboard.
