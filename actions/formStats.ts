@@ -16,7 +16,7 @@ export const getFormStats = async () => {
             ownerId: user.id as string
         },
         include: {
-            FormSubmissions: {
+            Submissions: {
                 select: {
                     createdAt: true,
                     id: true
@@ -43,7 +43,7 @@ export const getFormStats = async () => {
     
     const recentSubmissions = await prisma.submissions.findMany({
         where: {
-            form: {
+            Form: {
                 ownerId: user.id as string
             },
             createdAt: {
@@ -93,12 +93,12 @@ export const getFormStats = async () => {
     // Get recent activity (last 5 submissions with form details)
     const recentActivity = await prisma.submissions.findMany({
         where: {
-            form: {
+            Form: {
                 ownerId: user.id as string
             }
         },
         include: {
-            form: true
+            Form: true
         },
         orderBy: {
             createdAt: 'desc'
@@ -107,14 +107,14 @@ export const getFormStats = async () => {
     });
 
     const recentActivityFormatted = recentActivity.map(submission => {
-        const formContent = typeof submission.form.content === 'string' 
-            ? JSON.parse(submission.form.content) 
-            : submission.form.content;
+        const formContent = typeof submission.Form.content === 'string' 
+            ? JSON.parse(submission.Form.content) 
+            : submission.Form.content;
         
         return {
             id: submission.id,
             formTitle: formContent.formTitle || 'Untitled Form',
-            formId: submission.form.uuid,
+            formId: submission.Form.uuid,
             createdAt: submission.createdAt
         };
     });
@@ -125,7 +125,7 @@ export const getFormStats = async () => {
     
     const previousWeekSubmissions = await prisma.submissions.count({
         where: {
-            form: {
+            Form: {
                 ownerId: user.id as string
             },
             createdAt: {

@@ -152,7 +152,7 @@ const FormList: React.FC<Props> = ({ form }) => {
           </div>
         )}
         <CardDescription>
-          Deploy your new project in one-click.
+          {form.description || "No description provided"}
         </CardDescription>
       </CardHeader>
       <CardContent>

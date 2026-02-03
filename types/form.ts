@@ -18,6 +18,7 @@ export type Form = {
     ownerId:string;
     published:boolean;
     content:Content;
+    description?:string;
     submissions:number;
     shareUrl:string;
 }

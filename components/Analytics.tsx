@@ -44,7 +44,10 @@ type Props = {
   data: AnalyticsData | null;
 }
 
-const Analytics : React.FC<Props> = ({ data }) => {
+const cardHover =
+  "transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl dark:hover:shadow-black/40";
+
+const Analytics: React.FC<Props> = ({ data }) => {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -54,9 +57,8 @@ const Analytics : React.FC<Props> = ({ data }) => {
   }
 
   const getTimeAgo = (date: Date) => {
-    const seconds = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
-    
-    if (seconds < 60) return 'just now';
+    const seconds = Math.floor((Date.now() - new Date(date).getTime()) / 1000);
+    if (seconds < 60) return "just now";
     const minutes = Math.floor(seconds / 60);
     if (minutes < 60) return `${minutes}m ago`;
     const hours = Math.floor(minutes / 60);
@@ -79,10 +81,9 @@ const Analytics : React.FC<Props> = ({ data }) => {
         </p>
       </div>
 
-      {/* Key Metrics Grid */}
+      {/* Key Metrics */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        {/* Total Forms */}
-        <Card className="hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-green-500">
+        <Card className={`border-l-4 border-l-green-500 ${cardHover}`}>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-400">
               Total Forms
@@ -90,17 +91,12 @@ const Analytics : React.FC<Props> = ({ data }) => {
             <FileText className="w-5 h-5 text-green-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-              {data.totalForms}
-            </div>
-            <p className="text-xs text-gray-500 mt-1">
-              {data.publishedForms} published
-            </p>
+            <div className="text-3xl font-bold">{data.totalForms}</div>
+            <p className="text-xs text-gray-500">{data.publishedForms} published</p>
           </CardContent>
         </Card>
 
-        {/* Total Submissions */}
-        <Card className="hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-emerald-500">
+        <Card className={`border-l-4 border-l-emerald-500 ${cardHover}`}>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-400">
               Total Submissions
@@ -108,24 +104,21 @@ const Analytics : React.FC<Props> = ({ data }) => {
             <Send className="w-5 h-5 text-emerald-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-              {data.totalSubmissions}
-            </div>
+            <div className="text-3xl font-bold">{data.totalSubmissions}</div>
             <div className="flex items-center gap-1 mt-1">
               {data.growthPercentage >= 0 ? (
                 <TrendingUp className="w-3 h-3 text-green-500" />
               ) : (
                 <TrendingDown className="w-3 h-3 text-red-500" />
               )}
-              <p className={`text-xs ${data.growthPercentage >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+              <p className={`text-xs ${data.growthPercentage >= 0 ? "text-green-500" : "text-red-500"}`}>
                 {Math.abs(data.growthPercentage)}% vs last week
               </p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Published Forms */}
-        <Card className="hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-teal-500">
+        <Card className={`border-l-4 border-l-teal-500 ${cardHover}`}>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-400">
               Published Forms
@@ -133,17 +126,14 @@ const Analytics : React.FC<Props> = ({ data }) => {
             <CheckCircle className="w-5 h-5 text-teal-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-              {data.publishedForms}
-            </div>
-            <p className="text-xs text-gray-500 mt-1">
+            <div className="text-3xl font-bold">{data.publishedForms}</div>
+            <p className="text-xs text-gray-500">
               {data.totalForms - data.publishedForms} drafts
             </p>
           </CardContent>
         </Card>
 
-        {/* Average per Form */}
-        <Card className="hover:shadow-lg transition-shadow duration-300 border-l-4 border-l-blue-500">
+        <Card className={`border-l-4 border-l-blue-500 ${cardHover}`}>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-gray-600 dark:text-gray-400">
               Avg per Form
@@ -151,93 +141,74 @@ const Analytics : React.FC<Props> = ({ data }) => {
             <BarChart3 className="w-5 h-5 text-blue-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-              {data.avgSubmissionsPerForm}
-            </div>
-            <p className="text-xs text-gray-500 mt-1">
-              submissions/form
-            </p>
+            <div className="text-3xl font-bold">{data.avgSubmissionsPerForm}</div>
+            <p className="text-xs text-gray-500">submissions/form</p>
           </CardContent>
         </Card>
       </div>
 
-      {/* Charts and Tables Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-        {/* Submissions Timeline */}
-        <Card className="hover:shadow-lg transition-shadow duration-300">
+      {/* Charts + Lists */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <Card className={cardHover}>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
+            <CardTitle className="flex items-center gap-2">
               <Activity className="w-5 h-5 text-green-500" />
               Last 7 Days Activity
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {data.submissionsByDay.map((day, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="text-xs text-gray-500 w-12 sm:w-16">{day.date}</div>
-                  <div className="flex-1 bg-gray-100 dark:bg-gray-800 rounded-full h-6 sm:h-8 overflow-hidden">
-                    <div 
-                      className="bg-gradient-to-r from-green-500 to-emerald-500 h-full rounded-full flex items-center justify-end pr-2 transition-all duration-500"
-                      style={{ width: `${(day.count / maxSubmissions) * 100}%` }}
-                    >
-                      {day.count > 0 && (
-                        <span className="text-xs font-semibold text-white">{day.count}</span>
-                      )}
-                    </div>
+          <CardContent className="space-y-3">
+            {data.submissionsByDay.map((day, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <span className="text-xs w-16 text-gray-500">{day.date}</span>
+                <div className="flex-1 bg-gray-100 dark:bg-gray-800 rounded-full h-7">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-end pr-2"
+                    style={{ width: `${(day.count / maxSubmissions) * 100}%` }}
+                  >
+                    {day.count > 0 && (
+                      <span className="text-xs font-semibold text-white">{day.count}</span>
+                    )}
                   </div>
                 </div>
-              ))}
-            </div>
-            <div className="mt-4 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-              <p className="text-sm text-green-700 dark:text-green-400 font-medium">
-                {data.recentSubmissionsCount} submissions this week
-              </p>
-            </div>
+              </div>
+            ))}
           </CardContent>
         </Card>
 
-        {/* Top Performing Forms */}
-        <Card className="hover:shadow-lg transition-shadow duration-300">
+        <Card className={cardHover}>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
+            <CardTitle className="flex items-center gap-2">
               <BarChart3 className="w-5 h-5 text-emerald-500" />
               Top Performing Forms
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-3">
             {data.topForms.length > 0 ? (
-              <div className="space-y-3">
-                {data.topForms.map((form, index) => (
-                  <Link 
-                    key={form.id} 
+              <>
+                {data.topForms.map((form, i) => (
+                  <Link
+                    key={form.id}
                     href={`/dashboard/forms/${form.id}/submissions`}
-                    className="block p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    className="block p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 flex-1 min-w-0">
-                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 font-bold text-sm flex-shrink-0">
-                          {index + 1}
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-sm font-bold">
+                          {i + 1}
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="font-medium text-sm text-gray-900 dark:text-white truncate">
-                            {form.title}
-                          </p>
-                          <p className="text-xs text-gray-500">
-                            {form.published ? 'Published' : 'Draft'}
-                          </p>
+                        <div>
+                          <p className="text-sm font-medium truncate">{form.title}</p>
+                          <p className="text-xs text-gray-500">{form.published ? "Published" : "Draft"}</p>
                         </div>
                       </div>
-                      <div className="text-right ml-2">
-                        <div className="text-lg font-bold text-green-500">
-                          {form.submissions}
-                        </div>
-                        <div className="text-xs text-gray-500">responses</div>
+                      <div className="text-right">
+                        <p className="text-lg font-bold text-green-500">{form.submissions}</p>
+                        <p className="text-xs text-gray-500">responses</p>
                       </div>
                     </div>
                   </Link>
                 ))}
-              </div>
+              </>
             ) : (
               <div className="text-center py-8 text-gray-500">
                 <FileText className="w-12 h-12 mx-auto mb-2 opacity-50" />
@@ -248,37 +219,31 @@ const Analytics : React.FC<Props> = ({ data }) => {
         </Card>
       </div>
 
-      {/* Recent Activity */}
-      <Card className="hover:shadow-lg transition-shadow duration-300">
+      <Card className={cardHover}>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
+          <CardTitle className="flex items-center gap-2">
             <Clock className="w-5 h-5 text-teal-500" />
             Recent Activity
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="space-y-3">
           {data.recentActivity.length > 0 ? (
-            <div className="space-y-3">
-              {data.recentActivity.map((activity) => (
+            <>
+              {data.recentActivity.map(a => (
                 <Link
-                  key={activity.id}
-                  href={`/dashboard/forms/${activity.formId}/submissions`}
-                  className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  key={a.id}
+                  href={`/dashboard/forms/${a.formId}/submissions`}
+                  className="flex justify-between p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
                 >
-                  <div className="flex items-center gap-3 flex-1 min-w-0">
-                    <div className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
-                        New submission to <span className="text-green-500">{activity.formTitle}</span>
-                      </p>
-                      <p className="text-xs text-gray-500">
-                        {getTimeAgo(activity.createdAt)}
-                      </p>
-                    </div>
+                  <div>
+                    <p className="text-sm font-medium">
+                      New submission to <span className="text-green-500">{a.formTitle}</span>
+                    </p>
+                    <p className="text-xs text-gray-500">{getTimeAgo(a.createdAt)}</p>
                   </div>
                 </Link>
               ))}
-            </div>
+            </>
           ) : (
             <div className="text-center py-8 text-gray-500">
               <Activity className="w-12 h-12 mx-auto mb-2 opacity-50" />

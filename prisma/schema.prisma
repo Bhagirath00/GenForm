@@ -8,32 +8,38 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model Form {
-  id              Int           @id @default(autoincrement())
-  uuid            String        @unique @default(uuid())
-  ownerId         String
-  createdAt       DateTime      @default(now())
-  published       Boolean       @default(false)
-  content         Json
-  shareUrl        String        @default(uuid())
-  submissions     Int           @default(0)
-  FormSubmissions Submissions[]
+  id          Int           @id @default(autoincrement())
+  ownerId     String
+  createdAt   DateTime      @default(now())
+  published   Boolean       @default(false)
+  content     Json
+  shareUrl    String
+  submissions Int           @default(0)
+  uuid        String        @unique
+  viewCount   Int           @default(0)
+  description String?
+  Submissions Submissions[]
 }
 
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model Submissions {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  formId    Int
-  content   Json
-  form      Form     @relation(fields: [formId], references: [id])
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  formId       Int
+  content      Json
+  responseTime Int?
+  Form         Form     @relation(fields: [formId], references: [id])
 }
 
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model Subscription {
   id         Int      @id @default(autoincrement())
   userId     String
   plan       String
   createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  updatedAt  DateTime
   subscribed Boolean  @default(false)
 }
 

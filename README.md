@@ -4,14 +4,26 @@
 
 ### Transform Ideas into Beautiful Forms in Seconds
 
-[![Live Demo](https://img.shields.io/badge/demo-live-green.svg)](https://genformai-kappa.vercel.app/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Next.js](https://img.shields.io/badge/Next.js-15.1.4-black)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![Live Demo](https://img.shields.io/badge/demo-live-green.svg?style=for-the-badge&logo=vercel)](https://genformai-kappa.vercel.app/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![SWOC 2026](https://img.shields.io/badge/SWOC-2026-orange?style=for-the-badge)](https://swoc.tech/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](https://github.com/Amansingh0807/GenForm/pulls)
 
 [Live Demo](https://genformai-kappa.vercel.app/) • [Report Bug](https://github.com/Amansingh0807/GenForm/issues) • [Request Feature](https://github.com/Amansingh0807/GenForm/issues)
 
 </div>
+
+---
+
+## 📍 Jump To
+
+- [**🤝 Contributors**](#-contributors)  
+- [**✨ Key Features**](#-key-features)  
+- [**🛠️ Technology Stack**](#technology-stack)  
+- [**📂 Project Structure**](#-project-structure)  
+- [**🚀 Getting Started**](#-getting-started)  
+- [**📖 Usage Guide**](#-usage-guide)  
+- [**🆘 Support**](#-support)
 
 ---
 ## 🤝 Contributors
@@ -19,7 +31,7 @@
 We ❤️ our contributors!  
 GenForm proudly participates in **SWOC'26**, and we appreciate everyone who contributes to this project.
 
-### 🌟 Contributors 
+### 🌟 Contributors
 
 <!-- Add your name below once your PR is merged -->
 
@@ -106,7 +118,44 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
         <sub><b>Roshan Kumar Singh</b></sub>
       </a>
     </td>
+    <td align="center">
+      <a href="https://github.com/yash-mhetras">
+        <img src="https://github.com/yash-mhetras.png" width="100px;" /><br />
+        <sub><b>Yash Mhetras</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/ManabBiswas">
+        <img src="https://github.com/ManabBiswas.png" width="100px;" /><br />
+        <sub><b>Manab Biswas</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/SudharsanSaravanan">
+        <img src="https://github.com/SudharsanSaravanan.png" width="100px;" /><br />
+        <sub><b>Sudharsana Saravanan S</b></sub>
+      </a>
+    </td>
   </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Trapti10">
+        <img src="https://github.com/Trapti10.png" width="100px;" /><br />
+        <sub><b>Trapti Vishwakarma</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/k4rth1k-h3gd3">
+        <img src="https://github.com/k4rth1k-h3gd3.png" width="100px;" /><br />
+        <sub><b>Karthik Hegde</b></sub>
+      </a>
+    </td>
+  <td align="center">
+      <a href="https://github.com/Nitya-003">
+        <img src="https://github.com/Nitya-003.png" width="100px;" /><br />
+        <sub><b>Nitya Gosain</b></sub>
+      </a>
+    </td>
 </table>
 
 ---
@@ -129,18 +178,21 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
 ## 🎯 Key Features
 
 ### 🤖 AI Form Generation
+
 - **Natural Language Processing** - Describe your form in plain English
 - **Smart Field Detection** - AI automatically suggests appropriate field types
 - **Instant Creation** - Generate complete forms in under 5 seconds
 - **Context Understanding** - AI understands your form's purpose and adapts accordingly
 
 ### ✏️ Rich Text Editing
+
 - **WYSIWYG Editor** - Format form descriptions with bold, italic, underline
 - **List Support** - Add ordered and unordered lists
 - **Link Integration** - Include hyperlinks in descriptions
 - **Google Forms-like Experience** - Familiar and intuitive interface
 
 ### 🎨 Form Customization
+
 - **Inline Title Editing** - Edit form names directly from dashboard or edit page
 - **Field Management** - Add, remove, reorder, and customize fields
 - **Field Types** - Text, email, number, select, radio, checkbox, and more
@@ -148,6 +200,7 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
 - **Placeholders** - Add helpful placeholder text for better UX
 
 ### 📊 Analytics Dashboard
+
 - **Submission Tracking** - Monitor form responses in real-time
 - **Visual Charts** - Beautiful graphs and statistics
 - **Submission Details** - View individual responses with timestamps
@@ -155,6 +208,7 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
 - **Form Performance** - Track engagement and completion rates
 
 ### 🔐 Authentication & Security
+
 - **Clerk Integration** - Secure user authentication
 - **User Management** - Sign up, sign in, profile management
 - **Protected Routes** - Form ownership verification
@@ -162,12 +216,14 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
 - **UUID System** - Prevent form enumeration attacks
 
 ### 💳 Subscription & Payments
+
 - **Stripe Integration** - Secure payment processing
 - **Multiple Plans** - Free, Pro, and Enterprise tiers
 - **Usage Limits** - Form limits based on subscription
 - **Upgrade Flow** - Seamless subscription management
 
 ### 🎯 Form Sharing
+
 - **Unique URLs** - Each form gets a UUID-based public URL
 - **Social Sharing** - Share via WhatsApp, Email, LinkedIn, Twitter
 - **QR Codes** - Generate QR codes for offline sharing
@@ -175,6 +231,7 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
 - **Copy Link** - One-click link copying
 
 ### 🌓 Modern UI/UX
+
 - **Dark Mode** - Full dark mode support
 - **Responsive Design** - Perfect on mobile, tablet, and desktop
 - **Gradient Themes** - Beautiful green/blue color scheme
@@ -183,32 +240,22 @@ GenForm proudly participates in **SWOC'26**, and we appreciate everyone who cont
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
-### Frontend
-- **Framework** - Next.js 15.1.4 with App Router
-- **Language** - TypeScript 5.0
-- **Styling** - Tailwind CSS 3.4
-- **UI Components** - Shadcn/UI
-- **Icons** - Lucide React
-- **Rich Text** - React Quill (React 19 compatible)
-
-### Backend
-- **Runtime** - Node.js
-- **Database** - PostgreSQL (Supabase)
-- **ORM** - Prisma
-- **Authentication** - Clerk
-- **Payments** - Stripe
-- **AI** - Google Gemini API, Hugging Face Models 
-
-### DevOps & Tools
-- **Hosting** - Vercel
-- **Version Control** - Git & GitHub
-- **Package Manager** - npm
-- **Build Tool** - Turbopack
-- **Code Quality** - ESLint
+| Category        | Technology                                                                 | Usage                               |
+| :---            | :---                                                                       | :---                                |
+| **Frontend**    | <img src="https://skillicons.dev/icons?i=nextjs" width="20"/> **Next.js 15** | App Router & Server Components      |
+| **Language**    | <img src="https://skillicons.dev/icons?i=ts" width="20"/> **TypeScript**    | Type-safe Development               |
+| **Styling**     | <img src="https://skillicons.dev/icons?i=tailwind" width="20"/> **Tailwind CSS** | Modern UI & Responsive Design   |
+| **Database**    | <img src="https://skillicons.dev/icons?i=postgres" width="20"/> **PostgreSQL** | Relational data via Supabase     |
+| **AI Engine**   | <img src="https://skillicons.dev/icons?i=google" width="20"/> **Gemini API** | Natural Language Form Parsing       |
+| **Payments**    | <img src="https://skillicons.dev/icons?i=stripe" width="20"/> **Stripe**    | Secure Payment Gateway              |
+| **Package Mgr** | <img src="https://skillicons.dev/icons?i=npm" width="20"/> **npm**          | Dependency & Package Management     |
+| **Runtime**     | <img src="https://skillicons.dev/icons?i=nodejs" width="20"/> **Node.js**   | Server-side JavaScript Execution    |
+| **Auth**        | <img src="https://skillicons.dev/icons?i=clerk" width="20"/> **Clerk**      | Authentication & User Management    |
 
 ---
+
 ## 📁 Project Structure
 
 Here’s a quick look at how the repository is organized:
@@ -249,6 +296,7 @@ Here’s a quick look at how the repository is organized:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 ```bash
 Node.js 18.x or higher
 npm
@@ -258,22 +306,26 @@ PostgreSQL database
 ### Installation
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/Amansingh0807/GenForm.git
 cd GenForm
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Set up environment variables**
+
 ```bash
 cp .env.example .env
 ```
 
 Add your credentials:
+
 ```env
 # Database
 DATABASE_URL="your_postgresql_url"
@@ -301,12 +353,14 @@ NEXT_PUBLIC_BASE_URL = "Link"
 ```
 
 4. **Run database migrations**
+
 ```bash
 npx prisma migrate dev
 npx prisma generate
 ```
 
 5. **Start development server**
+
 ```bash
 npm run dev
 ```
@@ -323,7 +377,7 @@ Visit [http://localhost:3000](http://localhost:3000) 🎉
 2. **Navigate to Dashboard** - Click "Create Form" or go to Dashboard
 3. **Describe Your Form** - Enter a prompt like:
    ```
-   Create a customer feedback form with name, email, 
+   Create a customer feedback form with name, email,
    rating (1-5), and comments
    ```
 4. **AI Generates Form** - Watch as AI creates your form instantly
@@ -356,12 +410,14 @@ AI Output:
 ```
 
 ### Rich Text Descriptions
+
 - Add formatted instructions to your forms
 - Include links to privacy policies
 - Create professional-looking form headers
 - Format text with lists and emphasis
 
 ### Real-Time Analytics
+
 - Track total submissions
 - Monitor submission trends
 - View individual responses
@@ -382,6 +438,8 @@ AI Output:
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 Please read our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) before getting started.
+
+---
 
 ## 🛡️ Security
 
